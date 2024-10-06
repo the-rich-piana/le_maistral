@@ -1,0 +1,59 @@
+# International Journal of Computer Applications (0975 - 8887)
+Volume 147 - No. 8, August 2016
+
+1) Boolean model: The Boolean model allows for the use of operators of Boolean algebra, AND, OR and NOT; for query formulation, but has one major disadvantage: a Boolean system is not able to rank the retrieved list of documents. In the Boolean model, a document is subjected to a set of keywords. Overlapping of these keywords indicates that the document is extracted by AND, OR, or NOT/BUT. The retrieval function in this model treats a document as either relevant or irrelevant [7].
+
+2) Vector Space Model: The vector space model can best be characterized by its attempt to rank documents by the similarity between the query and each document in the vector space. Similarities between a query and a document are computed using the similarity cosine function. Similarity Cosine function can be defined as:
+
+Where,
+
+Sim(d<sub>j</sub>, q) = d<sub>j</sub> q = Σ<sub>t</sub>(w<sub>t,j</sub> w<sub>t,q</sub>)/||d<sub>j</sub>|| ||q||
+
+Documents and queries are represented as vectors.
+
+d<sub>j</sub> = (w<sub>1,j</sub>, w<sub>2,j</sub>, ..., w<sub>t,j</sub>)
+q = (w<sub>1,q</sub>, w<sub>2,q</sub>, ..., w<sub>t,q</sub>)
+
+Vector Space Model have been introduce term weight schemes known as tf-idf weighting. These weights have a term frequency (tf) factor measuring the frequency of occurrence of a term in a document and an inverse document frequency (idf) factor measuring the inverse of the number of documents that contain a query or document term [8].
+
+3) Probabilistic model: The most important characteristic of the probabilistic model is its attempt to rank documents by their probability of relevance given a query. Documents and queries are represented as vectors of terms, with each term vector element indicating whether a document attribute or term occurs in the document or query, or not. Instead of probabilities, the probabilistic model uses odds (OR), where OR(O,R) = P(R|R) P(R|R). P(R|R) is mean “document is relevant” and O(R) means “document is not relevant” [8].
+
+5.3 Information Retrieval challenges for Dat enviroments
+
+There exists several information retrieval techniques. These techniques involve ranking documents in order to generate the documents of the Dat environment and determine the appropriate data contained in the data sources. Challenges faced by search engines, in Dat environment to retrieve the relevant data or information.
+
+Challenge 1: One particular challenge is the huge scale, given by the huge number of WebPages available on the Internet (for example, about 30 billion WebPages were indexed by Google in 2005).
+
+Challenge 2: Another challenge is inherent to any information retrieval system that deals with text: the ambiguity of the language. For linguistic reasons, other than the senses it is difficult to have perfect matches between documents and user queries.
+
+Challenge 3: Deeming DSSP, will involve significant extension of data management techniques, but it will be crucial to leverage techniques from several other fields.
+
+Challenge 4: Several operations on Dat environment inherently involves some degree of uncertainty about the data, its location, eversences and completeness.
+
+Challenge 5: Incorporating techniques from Information Retrieval will play a crucial role in building DSSP.
+
+Challenge 6: Recent techniques from Information Visualization will be valuable.
+
+6. CONCLUSION AND FUTURE
+
+Due to the interesting challenges and techniques explored, the strategies of Research Information System might be not easy then conventional technologies like Relational Database management systems because exploration of domain knowledge is very crucial for CRS systems. Data Integration techniques used to combine data from different sources is early year’s subject of information retrieval. In calling for effective integration approaches, realized in practice. Users are not compromising with low standards of information accuracy and are willing to find the right solution. We can conclude that we are on the right track. Data Integration field has shown excellent progress in dealing with the most crucial problems presented on the way of integrating data, however, further challenges are constantly arising.
+
+The expansion of scm & unstructured data (XML) for example implies that data sources are even more complex and difficult to handle. Capturing with semantic heterogeneity in data is a challenging task. Therefore, the research community is getting even more intense and promising ideas are expected to develop. We can choose one of the models for Information Retrieval methods for Databases as discussed above.
+
+There are several directions for future work in this area. It would be interesting to develop new approaches to information retrieval model under the framework which can be used for in the future work. The research community has no reason to give up the research in Information Retrieval and Databases challenges.
+
+7. ACKNOWLEDGMENT
+
+We would like to acknowledge the support and input from our family, Dean Research, Faculty members of Sunway University, Japan, Dean and colleagues from Mady University of Science & Technology (Iran) and India.
+
+8. REFERENCES
+
+[1] K. Belhajjame, A. Pasca, S. Ebrahimi, Faehlback-Benedict, H. Garcia-Molina, and R. V. Haynes, of Semantic Maps for Databases, ACM SIGMOD Record 2009, 2010.
+
+[2] M. Franklin, A. Halevy, and D. Maier, Principles of Databases systems”, Proc. of Twenty-Fifth ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Databases Systems (PODS 2006), ACM Press, p. 1-9, 2006.
+
+[3] M. Franklin, A. Bulky, D. Maier, From databases to Databases: An Introduction to Databases for Information Management, ACM SIGMOD Record 34 (4), 2005, 27-33.
+
+[4] B. Ziegler, K. Dierich, Data Integration — Problems, Approaches, and Perspectives, Springer, Berlin Heidelberg, 2007. Tuviel, P., 2007. Modeling and Simulation Design. AK Peters Ltd.
+
+27

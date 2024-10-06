@@ -11,7 +11,13 @@ from typing import List, Dict, Any
 from pydantic import BaseModel, Field
 from langchain import PromptTemplate
 from langchain.output_parsers import PydanticOutputParser
-from langchain_mistralai import ChatMistralAI
+# from langchain_mistralai import ChatMistralAI
+from langchain_openai import ChatOpenAI as ChatMistralAI
+import tempfile
+import whisper
+from pytubefix import YouTube
+import re
+import json
 
 load_dotenv()
 
@@ -36,48 +42,46 @@ def encode_image(image_path):
 # Function to process a list of content chunks
 def process_pages(contents: List[str]) -> Dict[str, Any]:
     model = ChatMistralAI(
-        model="mistral-large-latest",
-        temperature=0,
-        max_retries=2,
-        # other params...
+        model = 'gpt-4o-mini'
     )
+
     # Parser for the model's output
     parser = PydanticOutputParser(pydantic_object=PageProcessorOutput)
 
     # Prompt template for the language model
     prompt = PromptTemplate(
-        template="""
-    Given the current content chunk and the previous state, perform the following steps:
+        template="""You are a iterative summarizer that is given a large text chunk by chunk and you need to summarize the complete text by making and tracking a index.
+        Given the current content chunk and the previous state, perform the following steps:
 
-    1. **Update the Index (Table of Contents):**
-    - **Append** new significant headings or sub-headings to the existing 'Index' based on the current content and unassigned text.
-    - **Do not remove or modify** existing entries in the 'Index'.
+1. **Update the Index (Table of Contents):**
+   - **Append** new significant headings or sub-headings to the existing 'Index' based on the current content and unassigned text.
+   - **Do not remove or modify** existing entries in the 'Index'.
 
-    2. **Update FilledContent:**
-    - **Add new content** to 'FilledContent' under the appropriate headings from the 'Index'.
-    - **Do not overwrite** existing entries in 'FilledContent'.
+2. **Update FilledContent (summarized version of the new content):**
+   - **Add a summarized version** of the new content to 'FilledContent' under the appropriate headings from the 'Index'. Ensure that the summary covers all the important details do not miss out on any information. The style should be the same as the original content.
+   - **Do not overwrite** existing entries in 'FilledContent'.
 
-    3. **Handle Unassigned Text:**
-    - Identify any part of the content that could not be assigned to any section in the 'Index'.
-    - Combine it with 'UnassignedText' for the next iteration.
+3. **Handle Unassigned Text:**
+   - Identify any part of the content that could not be assigned to any section in the 'Index' previously.
+   - Adjust it in 'FilledContent' or combine it with 'UnassignedText' if nothing is added to filled content.
 
-    4. **Consider Next Content:**
-    - Use 'next_content' to anticipate upcoming topics and adjust the 'Index' if necessary.
+4. **Consider Next Content:**
+   - Use 'next_content' to anticipate upcoming topics and adjust the 'Index' if necessary.
 
-    {format_instructions}
+{format_instructions}
 
-    Previous Index (if any):
-    {last_index}
+Previous Index (if any):
+{last_index}
 
-    Unassigned Text (if any):
-    {unassigned_text}
+Unassigned Text (if any):
+{unassigned_text}
 
-    Current Content Chunk:
-    {page_content}
+New Content:
+{page_content}
 
-    Next Content Chunk (for context):
-    {next_content}
-    """,
+Next Content (for context):
+{next_content}
+""",
         input_variables=["page_content", "last_index", "unassigned_text", "next_content"],
         partial_variables={"format_instructions": parser.get_format_instructions()},
     )
@@ -121,6 +125,9 @@ def process_pages(contents: List[str]) -> Dict[str, Any]:
         # Update unassigned_text for the next iteration
         unassigned_text = result.UnassignedText.strip()
         print("Index: ", result.Index)
+        print("Filled Content: ", final_filled_content)
+        print('\n')
+        print("done")
     print("Index: ", last_index)
     print("Filled Content: ", final_filled_content)
     print('\n')
@@ -211,16 +218,33 @@ def combine_text_files(folder_path):
     
     return combined_file_path
 
-def process_files_recursively(root_dir):
+def should_skip_file(file_path, processed_files):
+    """
+    Check if the file should be skipped based on processed files.
+    
+    Args:
+    file_path (str): Path of the file to check.
+    processed_files (list): List of already processed files.
+    
+    Returns:
+    bool: True if the file should be skipped, False otherwise.
+    """
+    return any(processed_file in file_path for processed_file in processed_files)
+
+def process_files_recursively(root_dir, processed_files = []):
     """
     Recursively process files in the given directory.
     
     Args:
     root_dir (str): Root directory to start processing from.
+    processed_files (list): List of already processed files.
     """
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
             file_path = os.path.join(dirpath, filename)
+            if should_skip_file(file_path, processed_files):
+                continue  # Skip if any processed file path is part of the current file path
+
             file_extension = os.path.splitext(filename)[1].lower()
 
             if file_extension == '.txt':
@@ -238,18 +262,21 @@ def process_files_recursively(root_dir):
                         convert_image_to_text(image_path)
                 combine_text_files(pdf_images_folder)
 
-def process_text_files_recursively(root_dir: str):
+def process_text_files_recursively(root_dir: str, processed_files: list = []):
     """
-    Recursively process text files in the given directory.
+    Recursively process text files in the given directory and create a mapping.json file.
     
     Args:
     root_dir (str): Root directory to start processing from.
-    model: The language model to use for processing.
+    processed_files (list): List of already processed files.
     """
+    mapping = {}
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
-            if filename.endswith('.txt'):
+            if filename.endswith('.txt') and not filename.endswith('_summary.txt') and filename != 'links.txt':
                 file_path = os.path.join(dirpath, filename)
+                if should_skip_file(file_path, processed_files):
+                    continue  # Skip if any processed file path is part of the current file path
                 
                 # Read the content of the text file
                 with open(file_path, 'r', encoding='utf-8') as f:
@@ -297,6 +324,77 @@ def process_text_files_recursively(root_dir: str):
                     f.write(summary_content)
                 
                 print(f"Summary written to: {summary_file_path}")
+                
+                # Add to mapping
+                mapping[filename] = os.path.relpath(summary_file_path, root_dir)
 
-process_files_recursively('/Users/qazisaad/Projects/le_maistral/uploaded_groups')
-process_text_files_recursively('/Users/qazisaad/Projects/le_maistral/uploaded_groups')
+    # Write mapping to JSON file
+    mapping_file_path = os.path.join(root_dir, 'mapping.json')
+    with open(mapping_file_path, 'w') as f:
+        json.dump(mapping, f, indent=2)
+
+    print(f"Mapping file created at: {mapping_file_path}")
+
+def transcribe_youtube_video(url):
+    # yt = YouTube('http://youtube.com/watch?v=2lAe1cqCOXo')
+
+    # caption = yt.captions.get_by_language_code('en')
+    # print("srt: ", caption.generate_srt_captions())
+    print(url)
+    youtube = YouTube(url)
+    print(youtube.captions)
+    chunks = youtube.captions.get_by_language_code('a.en').generate_srt_captions().split('\n\n')
+    chunks =  [chunk.split('\n')[-1] for chunk in chunks]
+    print(' '.join(chunks))
+    transcription = ' '.join(chunks)
+
+    return transcription
+
+def process_youtube_links(root_dir, processed_files = []):
+    url_mapping = {}
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        if 'links.txt' in filenames:
+            links_file_path = os.path.join(dirpath, 'links.txt')
+            if should_skip_file(links_file_path, processed_files):
+                continue  # Skip if any processed file path is part of the current file path
+
+            with open(links_file_path, 'r') as f:
+                links = f.read().splitlines()
+
+            youtube_links = [link for link in links if 'youtube.com' in link or 'youtu.be' in link]
+
+            for link in youtube_links:
+                try:
+                    transcription = transcribe_youtube_video(link)
+                    
+                    # Create a valid filename from the URL
+                    cleaned_url = re.sub(r'[^\w\-_\. ]', '_', link)
+                    filename = cleaned_url + '.txt'
+                    output_path = os.path.join(dirpath, filename)
+
+                    if not should_skip_file(output_path, processed_files):
+                        with open(output_path, 'w', encoding='utf-8') as f:
+                            f.write(transcription)
+
+                        print(f"Transcription for {link} saved to {output_path}")
+                        
+                        # Add to URL mapping
+                        url_mapping[link] = cleaned_url + '.txt'
+
+                except Exception as e:
+                    print(f"Error processing {link}: {str(e)}")
+
+    # Save URL mapping to JSON file
+    mapping_file_path = os.path.join(root_dir, 'url_mapping.json')
+    with open(mapping_file_path, 'w') as f:
+        json.dump(url_mapping, f, indent=2)
+
+    print(f"URL mapping file created at: {mapping_file_path}")
+
+# Example usage
+root_dir = '/Users/qazisaad/Projects/le_maistral/uploaded_groups'
+processed_files = []  # Initialize an empty list of processed files
+
+process_files_recursively(root_dir, processed_files)
+process_text_files_recursively(root_dir, processed_files)
+process_youtube_links(root_dir, processed_files)

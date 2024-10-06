@@ -1,0 +1,26 @@
+# International Journal of Computer Applications (0975 - 8887)
+**Volume 147 - No. 8, August 2016**
+
+[5] J. Belkin, Nicholas J. and W. Bruce Croft “Retrieval Techniques: Volume 22,1987.
+
+[6] R. Basco-Vazes and B. Ribeiro-Neto “Modern Information Retrieval”, ACM Press, ISBN: 0-201-59829-X.
+
+[7] Anwar A. Alkenany, Web Information Retrieval and Search Engines Techniques, Al- Salti journal PP. 55-92.
+
+[8] G. Salton and M.J. McGill, editors, Introduction to Modern Information Retrieval. McGraw-Hill 1983.
+
+[9] E. Mauld Zaman, et al. “Information Integration for Heterogeneous Data Sources” IOSR Journal of Engineering Apr 2012, Vol. 2(4) pp: 640-643.
+
+[10] Shivayabo Bernard Kassamani, Ateya Ismail Lukandula “A Survey of the State of Databases” International Journal of Computer and Information Technology (IJSCIT) ISSN: 2279 - 8766 Volume 02 - Issue 06, November 2012.
+
+[11] Mignanjan IJI, Saminul Qamar, “Comparison of Ranking Algorithms and Databases”, International Conference On Advances in Computer Science & Information Technology (ICACEA) pp 565-572, March 2015.
+
+# AUTHOR PROFILE
+
+**Mr. Mignanjan IJI** received B.E. Degree in Information Technology from Rajasthan University, India, in 2005, and M.Tech Degree in Information Technology from Guru Gobind Singh Indraprastha University Delhi, India in 2007. He is Research scholar at Guru Govind Singh Indraprastha University Delhi, India. He is an Assistant Professor in Department of Computer Science & Engineering at Motilal Nehru National Institute of Technology Allahabad, India. His research areas are Computer Networks, Network Security, Wireless Sensor networks, Cloud Computing, and Android Application Development.
+
+**Dr. Shammul Qamar** He is B.Sc in 1992 from, Meerut University, Meerut, India. B.Tech (ECE) in 1996 from MMMEC, Gorakhpur University, India. M.Tech (Information System) in 2000 from AMU, Aligarh, India, and Ph.D (Computer Science) in 2005 from Guru Gobind Singh Indraprastha University Delhi, India. He is an Associate Professor in Department of Computer Science & Engineering at Motilal Nehru National Institute of Technology Allahabad, India. His research areas are Networking, Cloud Computing and Database.
+
+**[IJCA]** www.ijcaonline.org
+
+Page 28
