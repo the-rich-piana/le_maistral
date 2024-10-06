@@ -1,0 +1,2 @@
+langchain-mistralai==0.2.0
+langchain-chroma>=0.1.2

@@ -1,0 +1,33 @@
+Index:
+- Introduction
+- Lancement des ventes
+- Modèle de tarification
+- Nouveaux services et fonctionnalités
+- Édition visuelle
+- Sécurité et Fonctionnalités Réseau
+- Analytique et surveillance
+- Partenariats
+- Réflexions finales
+
+Filled Content:
+Lancement des ventes:
+La semaine de lancement des ventes est terminée et les utilisateurs ont des réactions variées, allant de l'insatisfaction concernant la tarification à l'excitation pour le routeur d'application qui est finalement en version générale.
+
+Modèle de tarification:
+Certaines personnes ont été mécontentes du modèle de tarification, mais, en tenant compte de tous les facteurs, cela semble fonctionner à peu près de la même manière à grande échelle.
+
+Nouveaux services et fonctionnalités:
+Les bases de données sont désormais disponibles à la revente, s'ajoutant aux déploiements et à un excellent cadre d'intégration.
+
+Édition visuelle:
+Pour faciliter l'édition du contenu sur le site marketing, une nouvelle fonctionnalité d'édition visuelle a été introduite, permettant aux utilisateurs de modifier leur contenu en temps réel.
+
+Sécurité et Fonctionnalités Réseau:
+Les pare-feux sont essentiels pour des fonctions telles que la mitigation DDoS, et un nouveau pare-feu a été introduit. De plus, la fonction 'secure compute' permet une connexion privée entre les fonctions sans serveur et l'infrastructure privée.
+
+Analytique et surveillance:
+Des services comme l'analytique intégrée et la surveillance ont été développés pour remplacer les services externes, avec des fonctionnalités de visualisation et d'optimisation des sites.
+
+Partenariats:
+Des partenariats avec Nuxt et Clerk ont été annoncés, visant à offrir des solutions d'authentification.
+

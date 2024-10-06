@@ -1,0 +1,32 @@
+Index:
+- Introduction
+- Présentation de Versailles
+- Comparaison entre AWS et Versailles
+- Architecture de Code Damn
+- Gestion des coûts
+- Gestion de l'infrastructure
+- Conclusion
+
+Filled Content:
+Introduction:
+Aujourd'hui, discutons de la comparaison entre Versailles et AWS, en particulier pour l'hébergement des projets Next.js.
+
+Présentation de Versailles:
+Versailles est un fournisseur d'hébergement populaire qui maintient Next.js et offre des services d'hébergement pour diverses technologies.
+
+Comparaison entre AWS et Versailles:
+AWS est connu, mais en termes de coûts, il est moins avantageux par rapport à Versailles, surtout pour les transferts de données. AWS CloudFront facture 0,085 dollars par Go, ce qui peut s'accumuler rapidement par rapport à l'offre de 20 dollars de Versailles pour 1 To de transfert de données.
+L'auteur discute des défis rencontrés lors de l'utilisation d'AWS pour déployer des applications Next.js. Bien qu'il existe des solutions impressionnantes, comme le déploiement sur AWS avec Lambda et CloudFront, l'auteur souligne sa préférence pour la simplicité et la gestion simplifiée offerte par des services comme Vercel (Warsaw). Il mentionne que pour les startups, la gestion des configurations complexes d'AWS peut être trop exigeante, et qu'il préfère se concentrer sur la logique commerciale plutôt que sur l'apprentissage des détails techniques d'AWS. Finalement, il a opté pour Vercel pro, bien qu'il exprime des préoccupations concernant le modèle de tarification de Vercel, notamment les coûts supplémentaires pour certaines fonctionnalités.
+
+Architecture de Code Damn:
+Code Damn se compose de trois microservices : le front-end sur Next.js hébergé sur Versailles, un serveur API GraphQL sur DigitalOcean, et un service d'exécution de code sur le playground. La séparation de ces services permet une meilleure évolutivité.
+
+Gestion des coûts:
+Le coût sur AWS devient prohibitif pour une startup comme Code Damn, qui dépasse souvent les 200 Go de transfert de données mensuel. Les frais pour AWS peuvent vite dépasser ceux de Versailles, qui offre une option plus économique.
+
+Gestion de l'infrastructure:
+AWS étant une infrastructure en tant que service, il offre beaucoup de contrôle, mais cela nécessite également une gestion intensive, ce qui peut détourner l'attention des entrepreneurs de leur cœur de métier.
+
+Conclusion:
+Finalement, Code Damn reste sur Versailles, ayant opté pour la version pro. Bien que des aspects du modèle de tarification de Versailles soient critiquables, la valeur en termes de CDN et de transfert de données est indéniable. Les utilisateurs de Next.js devraient peser le pour et le contre d'AWS par rapport à Versailles.
+

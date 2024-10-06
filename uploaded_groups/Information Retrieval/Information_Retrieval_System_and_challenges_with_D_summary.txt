@@ -1,0 +1,165 @@
+Index:
+- Information Retrieval System and challenges with Datasource
+- Information Retrieval System and challenges with Datospace
+- ABSTRACT
+- 1. INTRODUCTION
+- 1.1 Information Retrieval Introduction
+- 1.2 Datospace Introduction
+- 2. INFORMATION RETRIEVAL SYSTEM
+- 2.1 Components of IR System
+- 2.2 Why Information Retrieval
+- 2.3 Information Retrieval Techniques
+- 2.4 User Information Needs
+- 2.5 Information Need Description
+- 2.5.1 Description of the Information Need
+- 2.5.2 Query as an Incomplete Description of the Information Need
+- 2.5.3 Query Processing Techniques
+- 2.6 Retrieval Techniques Classification
+- 3. DATA SPACE
+- 3.1 Why Data space?
+- 4. HETEROGENEITY OF DATA SOURCES
+- 4.1 Solution
+- 5. INFORMATION RETRIEVAL IN DATASPACE
+- 5.2 Information Retrieval models for Datospace
+- 5.3 Information Retrieval challenges for Dataspace
+- Examples
+- 6. CONCLUSION AND FUTURE
+- 6.1 Challenge 6
+- 5.4 Data Integration in Research Information Systems
+- 5.5 Effective Integration Approaches
+- AUTHOR PROFILE
+- References
+- AUTHOR INFORMATION
+- AUTHOR BIOGRAPHY
+- AUTHOR PROFILE FOR DR. SHAMIMUL QAMAR
+- AUTHOR EDUCATION AND RESEARCH INTERESTS
+
+Filled Content:
+Information Retrieval System and challenges with Datasource:
+This section discusses the challenges posed by the integration of heterogeneous data sources, including multimedia data and large-scale datasets, in the context of Information Retrieval Systems. It highlights the complexities involved in retrieving and transforming information from various formats, emphasizing the necessity for intelligent retrieval techniques that focus on content and semantics.
+
+Information Retrieval System and challenges with Datospace:
+This part introduces the concept of Dadospace, which addresses the integration of diverse data types and sources. It notes the increasing complexity of information retrieval due to the variety of formats and contents from heterogeneous data sources.
+
+ABSTRACT:
+The paper outlines the significance of integrated information retrieval systems and the challenges posed by Datospace, where data from heterogeneous sources complicates the integration process. It discusses the need for effective retrieval techniques that can manage and transform information from varying formats.
+
+1. INTRODUCTION:
+The introduction emphasizes the growing importance of research data available on the web and the necessity for effective retrieval mechanisms. It points out the limitations of Current Research Information Systems (CRIS) in providing comprehensive information due to the dispersed nature of research data across various systems.
+
+1.1 Information Retrieval Introduction:
+This subsection elaborates on the need for quality research information and the challenges posed by information overload. It argues for the integration of research information from various systems to enhance retrieval efficiency and accessibility for researchers.
+
+1.2 Datospace Introduction:
+This part discusses how the Datospace concept builds on traditional web architectures, emphasizing the need for enhanced data management techniques to effectively handle heterogeneous data collections.
+Describing Datospace support platforms built on the traditional web architecture involves significant extensions of data management techniques, leveraging technologies from several other fields. The Datospace concept provides knowledge representation and the Semantic Web, offering two main benefits: simple, useful formalisms for representing ontologies and URL uniform resource identifiers for referring to digital content agreed upon by multiple data providers. Operations in Datospace involve uncertainty about data, its lineage, and structured queries. The AI community has developed formalisms for modeling uncertainty, but the challenge is to find models that are useful yet simple and scalable. Much of the data in a Datospace will be unstructured text, making information retrieval techniques central to building DSSP. Users often do not know what they seek, necessitating tools that progressively visualize search results and allow users to specify their needs. This paper develops models for different types of personal information retrieval, including user search representation and evaluation frameworks for demonstrating retrieval effectiveness. The proposed retrieval model exploits document metadata and multi-type structures, evaluated on benchmark document collections like movies and job descriptions.
+
+2. INFORMATION RETRIEVAL SYSTEM:
+This section defines information retrieval and outlines the importance of organizing and accessing information effectively to meet user needs. It highlights the necessity for structured representations of information to facilitate user access.
+Information retrieval is the art of demonstration, storage, organization, and access to information items. The representation and organization of information must allow the end user to access information that meets their needs, requiring the design of information systems that can handle structured, semi-structured, or unstructured data from the Datastore. It should inform users about the existence and location of data relevant to their queries.
+
+2.1 Components of IR System:
+
+One of the main problems in information management is the weak interoperability between various databases and information systems, particularly in organizing collaboration among different departments within an organization. Data management has been a significant and challenging topic in recent years, with various data sources scattered across enterprises, such as employee, student, and library data sources. Users must access each data source separately, and the dynamic nature of integrating heterogeneous data sources complicates this further.
+This section describes the components of a basic web information retrieval system. A general Web Information Retrieval system consists of the following components: 1. Crawling: The system browses the document collection and fetches documents. 2. Indexing: The system builds an index of the documents. 3. User gives the query. 4. Ranking: The system retrieves documents that are relevant to the query from the collection. 5. Presentation: The system presents the results to the user. The Information Retrieval Component for Datastore supports querying and searching, including: (1) Transition between keyword querying, browsing, and structured queries, (2) Meta-data queries, (3) Queries about the source of the data, (4) Filtering and aggregation, also known as monitoring of the Datastore.
+
+2.2 Why Information Retrieval:
+The world is overwhelmed by a flood of information, increasing daily. Internet users utilize various mechanisms to retrieve information from the web. As of January 2015, there were over 11.73 million pages on the web, with 500 new sites added daily. With 3.2 billion people online, 2.7 billion emails sent each day, and significant content uploaded on platforms like Facebook and YouTube, the demand for efficient information retrieval grows. Major search engines index billions of pages, illustrating the immense scale of web data.
+
+2.4 User Information Needs:
+The goal of any information retrieval system is to satisfy the user's information need. However, characterizing information needs is complex, as users often do not know precisely what they are looking for. It is assumed that the user's query is an incomplete description of their actual information need.
+is an incomplete description of the information need.
+
+2.5 Information Need Description:
+Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need. Query is an incomplete description of the information need.
+A query serves as an incomplete description of the information need, which implies that it may not fully encapsulate the user's request or underlying intent. The nature of a query often limits its ability to convey detailed information, leaving gaps that can affect the retrieval process.
+
+2.5.1 Description of the Information Need:
+The description of the information need highlights that a query is frequently an inadequate representation of what the user is truly seeking. This limitation can lead to challenges in effectively meeting the user's informational requirements.
+Query is an incomplete description of the information need. This statement is reiterated multiple times to emphasize the significance of understanding that a query does not fully encapsulate a user's information requirements.
+
+2.5.2 Query as an Incomplete Description of the Information Need:
+Query is an incomplete description of the information need. This phrase emphasizes that a query does not fully encapsulate the user's information requirements. Repeatedly stated, it highlights the limitations inherent in query construction and the necessity for more comprehensive understanding.
+The concept of the query being an incomplete description of the information need is reiterated multiple times, emphasizing the inherent limitations in any query. Queries often fail to encapsulate the full extent of the user's information requirements, leading to challenges in retrieval effectiveness.
+The concept of a query is examined as it relates to the information need. It is emphasized that a query functions as an incomplete description of the information need, and this notion is reiterated multiple times to highlight its significance in understanding information retrieval.
+The query serves as an incomplete description of the information need, indicating that it may not fully capture the user's intent or requirements. This limitation can affect the effectiveness of information retrieval processes.
+The query is an incomplete description of the information need. This statement is reiterated multiple times to emphasize that queries often do not fully capture the user's underlying information requirements.
+
+2.5.3 Query Processing Techniques:
+Operations like query expansion, stop word removal etc. are usually done on the query. In information retrieval, the criterion typically is the relevance of the retrieved information item with respect to the information need at hand. To achieve this goal, Information Retrieval Systems usually implement two main steps in the retrieval process.
+
+2.6 Retrieval Techniques Classification:
+We have defined a retrieval technique as a technique for comparing the query with the document representations. We can further classify retrieval techniques in terms of the representations that are used. Some techniques do not fall naturally into only a single category in this classification and others are hybrids of techniques from different categories that cannot be categorized in any one category. The first distinction we make among retrieval techniques is whether the set of retrieved documents contains only documents whose representation is an exact match with the query or a partial match. For a partial match, the retrieval technique will include also those that are an exact match with the query. The next level of classification distinguishes between techniques that compare the query with individual document representations and techniques that use a representation of documents that encompasses connections to other documents in the collection.
+
+2.3 Information Retrieval Techniques:
+In the information retrieval system (IRS), the searching process is fundamental, employing various techniques to retrieve documents that align with user needs. Retrieval techniques are defined as methods for comparing the user's query with document representations, with further classification based on the representations used. Techniques are categorized into those retrieving documents with exact matches versus those allowing partial matches. The classification also distinguishes between techniques that compare individual document representations and those that utilize connections among multiple documents. Individual techniques can be based on feature-based or structured representations, where features represent complex entities beyond single words. Structured techniques may incorporate logical matching algorithms or graph-like structures. The feature-based category includes formal models like vector space, probabilistic ranking, and Boolean models, as well as ad-hoc similarity measures.
+
+3. DATA SPACE:
+With the increasing volume of data across enterprises, there is a pressing need for efficient data management and integration technologies. Despite numerous opportunities for data integration, the technology's practical impact remains limited, largely due to costs and the manual coding of integration mechanisms. Data integration aims to allow transparent access to heterogeneous data sets, facilitating cross-querying and enhancing collaboration across different entities. Schema mappings are crucial for data integration, transforming data from source schemas to compatible target schemas. Data spaces have emerged as a proposed solution to bottlenecks in data integration, focusing on providing transparent access to data stored in various repositories with different underlying models.
+Data space are clearly distinguished from traditional data integration techniques, because they focus on the data itself, rather than on the data integration. This was it is cheaper. More importantly, Data space on not require effort for semantic integration; they focus on data-existence instead. Additionally, Data space provide higher degrees of scalability and reliability, and perceived nature of the entity relationship.
+
+Examples:
+One example of a Datospace described as a personal Datospace is described as a personal Datospace in which users access data stored in a set of personal data repositories. That set of repositories may include private file systems that currently exist on a user's desktop as well as private emails of a particular user. In the case of personal Datospace join like social networking communities, such as Facebook or Twitter, where users can share their understanding which items spread across their repositories/sources any related to each other in the same context. Although users are likely to search their data sources with keywords, they may also be interested in understanding relationships between data items. Users may typically desire to access the various versions of a certain file that exist in their Datospace, view files as well as emails worked on at the same time, or extract emails in the same project of a certain discussion. A second example of a Datospace which is available as a public Datospace is one that can be created by users. It is larger data source, potentially covering a large, self-describing, semi-structured, heterogeneous database. Google Base certainly consists of a set of tuples with attribute values. Each tuple entry te is recorded in terms of a number of attributes with matching values. An illustration of a Datospace tuple is shown in Fig. 5. In this case, the tuple in the Datospace set can be considered as a tuple in an existing Datospace. In this second example, the data in the Datospace is continuously updated by users around the world.
+
+4. HETEROGENEITY OF DATA SOURCES:
+In addition to the decentralization, the effectiveness of information retrieval is further worsened by the variety of heterogeneity present in the data sources. In each of these sources, data is organized using a different system operating systems, SQL, Vector Implementations etc., based on different conceptual models, and on different formats "system level heterogeneity" is considered in Be controversial much easier than before (e.g., via ODBC/JDBC connections to heterogeneous data sources). However, this is not the end of the road. "semantic heterogeneity", which appears every time there is a more than one way to structure a body of data. Semantic heterogeneity seems to be an unavoidable burden as data can be created in different ways, with different meanings, and with different data according to their own understanding of the reality. This of course is fundamentally different for each individual. In that sense, heterogeneity is to be found in data models, conceptual schemas, and of course the minds of the users. Page 26.
+
+4.1 Solution:
+The basic principle of data integration is to combine different data sources into a single homogeneous Datospace by providing a way that a whole new data source is generated. The end-user, when querying for data, has the illusion of interacting with one single system, which presents him a unified logical view of the data available. The first attempts at addressing this problem were based on data warehousing technologies, which focus primarily on data warehousing technologies. Traditional solutions prescribe creation of new data source or information integration from heterogeneous data sources, which is not cost effective.
+
+5.2 Information Retrieval models for Datospace:
+The basic question in Datospace information retrieval is that How to find data of interest within a collection of heterogeneous data? The fundamental IR models can be classified into Boolean, vector, and probabilistic models. These IR models are used in information retrieval systems. The most used data model in information retrieval are: the Vector Space Model (VSM) representing resources and queries as vectors in Datospace, the Probabilistic Ranking Model (PRP) using the notion of resource peculiarity with respect to a specific query, and the Inference Network defined as a hybrid of VSM and PRP models. 
+
+1) Boolean model: The Boolean model allows for the use of operators of Boolean algebra, AND, OR, and NOT for query formulation, but has one major disadvantage: a Boolean system is not able to rank the retrieved list of documents. In the Boolean model, a document is assigned weight as a direct key term occurrence. Overlapping and expected terms are not considered by AND, OR, or NOT/BUT. The retrieval function in this model treats a document as either relevant or irrelevant.
+
+2) Vector Space Model: The vector space model can best be characterized by its attempt to rank documents by the similarity between the query and each document in the vector space. Similarity measures are used to rank the documents. In the Vector space model, the cosine between two vectors is computed using the similarity cosine function. Documents and queries are represented as vectors.
+
+3) Probabilistic model: The most important characteristic of the probabilistic model is its attempt to rank documents by their probability of relevance given a query. Documents and queries are represented as vectors in a document vector space, using odds to indicate relevance.
+
+5.3 Information Retrieval challenges for Dataspace:
+There exists several information retrieval techniques; however, none of them can be considered as the panacea for all Dataspace challenges. In order to generate the documents of the Dataspace and determine the appropriate data contained in the data sources, challenges faced by search engines in Dataspace to retrieve the relevant data or information include:
+
+**Challenge 1**: One particular challenge is the huge scale, given by the huge number of WebPages available on the Internet.
+
+**Challenge 2**: Another challenge is inherent to any information retrieval system that deals with text data: the ambiguity of the language.
+
+**Challenge 3**: Designing DSSs will involve significant extension of data management techniques, but it will be crucial to leverage techniques from several other fields.
+
+**Challenge 4**: Several operations on Dataspace inherently involve some degree of uncertainty about the data, its relevance, correctness, and completeness.
+
+**Challenge 5**: Incorporating techniques from Information Retrieval will play a crucial role in building DSSP.
+
+6. CONCLUSION AND FUTURE:
+Recent techniques from Information Visualization will be valuable.
+
+6.1 Challenge 6:
+Recent techniques from Information Visualization will be valuable.
+
+5.4 Data Integration in Research Information Systems:
+The integrated nature and machine execution of Research Information Systems (CRS) can complicate their functionality compared to conventional technologies like Relational Database Management Systems. This is primarily due to the critical importance of domain knowledge in CRS systems. Data integration remains a key issue that needs addressing, as it is fundamentally viewed as a standard for information qualification. Effective integration approaches are essential, as users insist on high standards of information accuracy and are determined to find the right information. In the near future, numerous effective integration approaches will be realized in practice, emphasizing users' unwavering commitment to information quality.
+
+5.5 Effective Integration Approaches:
+Users are not compromising with low standards of information accuracy and are willing to find the right information. In the near future, there will be a great number of effective integration approaches realized in practice.
+In the near future, there will be a great number of effective integration approaches realized in practice. Users are not compromising with low standards of information accuracy and are willing to find the right information. This statement is reiterated multiple times, emphasizing the importance of effective integration approaches that meet high standards of accuracy.
+Effective integration approaches realized in practice are crucial, as users are not compromising with low standards of information accuracy. They are actively seeking the right information. In the near future, there will be an increasing number of effective integration methods that meet these high standards.
+Users are not compromising with low standards of information accuracy and are willing to find the right information. In the near future, there will be a great number of effective integration approaches realized in practice.
+In the near future, there will be a great number of effective integration approaches realized in practice. Users are not compromising with low standards of information accuracy and are willing to find the right information.
+A great number of effective integration approaches have been realized in practice. Users are not compromising with low standards of information accuracy and are willing to find the right information. This trend is expected to continue in the near future.
+Users are not compromising with low standards of information accuracy and are willing to find the right information. In the near future, there will be a great number of effective integration approaches realized in practice. This sentiment is echoed repeatedly, emphasizing a strong user demand for high-quality information retrieval and integration.
+Users are not compromising with low standards of information accuracy and are willing to find the right information. In the near future, there will be a great number of effective integration approaches realized in practice.
+
+AUTHOR PROFILE:
+The author profiles include Mr. Mianjan Iftikhar Naeem, who holds a B.E. Degree in Information Technology and is currently an Associate Professor at Motilal Nehru National Institute of Technology. His research interests cover areas like Computer Networks and Cloud Computing. Dr. Shamimul Qamar has extensive qualifications in Computer Science and is a Professor in Computer Networks Engineering at Mody University. His research focuses on similar areas as Mr. Naeem.
+Dr. Shamimul Qamar is a qualified academic with a B.Sc. in 1992 from Meerut University, Meerut, India, a B.Tech. (EE) in 1996 from MMMEC, Gorkahpur University, India, an M.Tech (Information System) in 2000 from AMU, Aligarh, India, and a Ph.D. (Computer Science) in 2009 from AMU, Aligarh, India. He currently serves as a Professor in the Computer Networks Engineering Department at Mody University, Lakshmanagar, Sikar, Rajasthan, India. His research interests encompass Computer Networks, Network Security, Wireless Sensor Networks, Cloud Computing, and Android Application Development.
+
+References:
+J. Belkin, Nicholas J. and W. Bruce Croft “Retrieval Techniques”, Volume 22, 1987. R. Bazoo-Vayss and B. Ribeiro-Neto “Modern Information Retrieval”, ACM Press, ISBN: 0 201-53829-X. Anawar A. Allkenahiri, Web Information Retrieval and Search Engines Techniques, AI: Saffi journal (PP. 54-92). G. Salton and M.J. McGill, editors, Introduction to Modern Information Retrieval. McGraw-Hill 1983. Er. Maid Zaman, et. al. “Information Integration for Heterogeneous Data Sources”, IOSR Journal of Engineering, Apr 2012, Vol. 2(4) pp: 640-643. Shivayabh Beranard Kasamani, Ateya Ismail Lukand, “A Survey of the State of Database bibliotheca”, International Journal of Computer and Information Technology (IJSCIT): 2279 - 0784 Volume 02 - Issue 06, November 2013. Mianjan Iftikhar Naeem, “Comparison of Ranking Algorithms for Database”, International Conference On Advances in Computer Science and Information Technology (ICACSEA), pp 565-572, March 2015.
+
+AUTHOR BIOGRAPHY:
+Dr. Shamimul Qamar is a distinguished academic with a B.Sc. in 1992 from Meerut University, Meerut, India, and a B.Tech. (EE) in 1996 from MMMEC, Gorkahpur University, India. He earned his M.Tech (Information System) in 2000 from AMU, Aligarh, India, and his Ph.D. (Computer Science) in 2009 from AMU, Aligarh, India. Currently, he serves as a Professor in the Computer Networks Engineering Department at Mody University, Lakshmanagar, Sikar, Rajasthan, INDIA. His research areas include Computer Networks, Network Security, Wireless Sensor Networks, Cloud Computing, and Android Application Development.
+
+AUTHOR PROFILE FOR DR. SHAMIMUL QAMAR:
+Dr. Shamimul Qamar holds a B.Sc. from Meerut University, India (1992), a B.Tech. (EE) from MMMEC, Gorkahpur University, India (1996), an M.Tech (Information System) from AMU, Aligarh, India (2000), and a Ph.D. in Computer Science from AMU, Aligarh, India (2009). He is currently a Professor in the Computer Networks Engineering Department at Mody University, Rajasthan, India. His research areas include Computer Networks, Network Security, Wireless Sensor Networks, Cloud Computing, and Android Application Development.
+Dr. Shamimul Qamar holds a B.Sc. from Meerut University, India (1992), a B.Tech. (EE) from MMMEC, Gorkahpur University (1996), an M.Tech (Information System) from AMU, Aligarh (2000), and a Ph.D. in Computer Science from AMU, Aligarh (2009). Currently, he is a Professor in the Computer Networks Engineering Department at Mody University, Lakshmanagar, Sikar, Rajasthan, INDIA. His research areas encompass Computer Networks, Network Security, Wireless Sensor Networks, Cloud Computing, and Android Application Development.
+Dr. Shamimul Qamar holds a B.Sc. from Meerut University, India, obtained in 1992, a B.Tech. (EE) from MMMEC, Gorkahpur University in 1996, an M.Tech (Information System) from AMU, Aligarh in 2000, and a Ph.D. in Computer Science from AMU, Aligarh, completed in 2009. He is currently a Professor in the Computer Networks Engineering Department at Mody University, Lakshmanagar, Sikar, Rajasthan, India. His research areas include Computer Networks, Network Security, Wireless Sensor Networks, Cloud Computing, and Android Application Development.
+

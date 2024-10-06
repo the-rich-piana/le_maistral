@@ -40,7 +40,7 @@ def encode_image(image_path):
         return None
     
 # Function to process a list of content chunks
-def process_pages(contents: List[str]) -> Dict[str, Any]:
+def process_pages(contents: List[str], language = 'en') -> Dict[str, Any]:
     model = ChatMistralAI(
         model = 'gpt-4o-mini'
     )
@@ -51,7 +51,8 @@ def process_pages(contents: List[str]) -> Dict[str, Any]:
     # Prompt template for the language model
     prompt = PromptTemplate(
         template="""You are a iterative summarizer that is given a large text chunk by chunk and you need to summarize the complete text by making and tracking a index.
-        Given the current content chunk and the previous state, perform the following steps:
+        Given the current content chunk and the previous state, 
+        Use the language {language} to perform the following steps:
 
 1. **Update the Index (Table of Contents):**
    - **Append** new significant headings or sub-headings to the existing 'Index' based on the current content and unassigned text.
@@ -98,7 +99,8 @@ Next Content (for context):
             "page_content": content,
             "last_index": '\n'.join(last_index),
             "unassigned_text": unassigned_text,
-            "next_content": next_content
+            "next_content": next_content,
+            "language": language
         }
 
         # Generate the prompt text
@@ -229,7 +231,7 @@ def should_skip_file(file_path, processed_files):
     Returns:
     bool: True if the file should be skipped, False otherwise.
     """
-    return any(processed_file in file_path for processed_file in processed_files)
+    return any(processed_file.split('/')[-1] in file_path for processed_file in processed_files)
 
 def process_files_recursively(root_dir, processed_files = []):
     """
@@ -262,7 +264,7 @@ def process_files_recursively(root_dir, processed_files = []):
                         convert_image_to_text(image_path)
                 combine_text_files(pdf_images_folder)
 
-def process_text_files_recursively(root_dir: str, processed_files: list = []):
+def process_text_files_recursively(root_dir: str, processed_files: list = [], language = 'en'):
     """
     Recursively process text files in the given directory and create a mapping.json file.
     
@@ -273,7 +275,7 @@ def process_text_files_recursively(root_dir: str, processed_files: list = []):
     mapping = {}
     for dirpath, dirnames, filenames in os.walk(root_dir):
         for filename in filenames:
-            if filename.endswith('.txt') and not filename.endswith('_summary.txt') and filename != 'links.txt':
+            if filename.endswith('.txt') and not filename.endswith('_summary.txt') and filename != 'links.txt' and filename != 'process_data.txt':
                 file_path = os.path.join(dirpath, filename)
                 if should_skip_file(file_path, processed_files):
                     continue  # Skip if any processed file path is part of the current file path
@@ -308,7 +310,7 @@ def process_text_files_recursively(root_dir: str, processed_files: list = []):
                 chunk_texts = [chunk.page_content for chunk in chunks]
                 
                 # Process the chunks
-                result = process_pages(chunk_texts)
+                result = process_pages(chunk_texts, language)
                 
                 # Generate the summary content
                 summary_content = "Index:\n"
@@ -330,8 +332,16 @@ def process_text_files_recursively(root_dir: str, processed_files: list = []):
 
     # Write mapping to JSON file
     mapping_file_path = os.path.join(root_dir, 'mapping.json')
+    existing_mapping = {}
+    if os.path.exists(mapping_file_path):
+        with open(mapping_file_path, 'r') as f:
+            existing_mapping = json.load(f)
+    
+    # Update existing mapping with new entries
+    existing_mapping.update(mapping)
+    
     with open(mapping_file_path, 'w') as f:
-        json.dump(mapping, f, indent=2)
+        json.dump(existing_mapping, f, indent=2)
 
     print(f"Mapping file created at: {mapping_file_path}")
 
@@ -392,9 +402,9 @@ def process_youtube_links(root_dir, processed_files = []):
     print(f"URL mapping file created at: {mapping_file_path}")
 
 # Example usage
-root_dir = '/Users/qazisaad/Projects/le_maistral/uploaded_groups'
-processed_files = []  # Initialize an empty list of processed files
+# root_dir = '/Users/qazisaad/Projects/le_maistral/uploaded_groups'
+# processed_files = []  # Initialize an empty list of processed files
 
-process_files_recursively(root_dir, processed_files)
-process_text_files_recursively(root_dir, processed_files)
-process_youtube_links(root_dir, processed_files)
+# process_files_recursively(root_dir, processed_files)
+# process_text_files_recursively(root_dir, processed_files)
+# process_youtube_links(root_dir, processed_files)
